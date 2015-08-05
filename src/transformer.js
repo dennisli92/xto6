@@ -20,6 +20,8 @@ class Transformer {
    */
   constructor(options = {}) {
 
+    this.sourceCode = '';
+
     this.ast = {};
     this.options = merge(this.constructor.defaultOptions, options);
     this.transformations = [];
@@ -58,10 +60,13 @@ class Transformer {
    */
   readFile(filename) {
 
-    this.ast = astGenerator.readFile(filename, {
+    const {ast, js} = astGenerator.readFile(filename, {
       sync: true,
       ecmaVersion: 6
     });
+
+    this.ast = ast;
+    this.sourceCode = js;
 
   }
 
@@ -72,7 +77,10 @@ class Transformer {
    */
   read(string) {
 
-    this.ast = astGenerator.read(string, this.options);
+    const {ast, js} = astGenerator.read(string, this.options);
+
+    this.ast = ast;
+    this.sourceCode = js;
 
   }
 
@@ -105,9 +113,18 @@ class Transformer {
    *
    * @returns {Object}
    */
-    out() {
+  out() {
     let result;
-    result = codeGenerator.generate(this.ast, {comment: true});
+    result = codeGenerator.generate(this.ast, {
+      comment: true, 
+      format: {
+        indent: {
+          style: '  ',
+        },
+        preserveBlankLines: true
+      },
+      sourceCode: this.sourceCode
+    });
 
     if(this.options.formatter !== false) {
       result = formatter.format(result, this.options.formatter);

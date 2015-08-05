@@ -1,3 +1,4 @@
+import 'estraverse-fb';
 import estraverse from 'estraverse';
 import MethodDefinition from './../syntax/method-definition.js';
 import ClassDeclaration from './../syntax/class-declaration.js';

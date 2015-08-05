@@ -1,4 +1,6 @@
+import 'estraverse-fb';
 import estraverse from 'estraverse';
+
 // import AssignmentPattern from '../syntax/assignment-pattern';
 
 export default

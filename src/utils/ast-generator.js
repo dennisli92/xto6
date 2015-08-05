@@ -1,4 +1,4 @@
-import acorn from 'acorn';
+import * as acorn from 'acorn-jsx';
 import escodegen from 'escodegen';
 import fs from 'fs';
 import coffee from 'coffee-script';
@@ -18,7 +18,7 @@ export function readFile(file, options) {
   }
 
   if (options.sync) {
-    let js = fs.readFileSync(file);
+    let js = fs.readFileSync(file, 'utf8');
     return this.read(js, options);
   } else {
     fs.readFile(file, (js) => {
@@ -45,16 +45,19 @@ export function read(js, options) {
   options.ranges = true;
   options.onComment = comments;
   options.onToken = tokens;
+  options.plugins = {
+    jsx: true
+  };
 
   if (options.coffee) {
     js = coffee.compile(js);
   }
-
+  
   let ast = acorn.parse(js, options);
 
   escodegen.attachComments(ast, comments, tokens);
 
-  return ast;
+  return {ast, js};
 }
 
 export default {

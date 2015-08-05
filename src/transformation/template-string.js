@@ -1,3 +1,4 @@
+import 'estraverse-fb';
 import estraverse from 'estraverse';
 import esutils from 'esutils/lib/ast.js';
 import TemplateLiteral from './../syntax/template-literal.js';

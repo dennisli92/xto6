@@ -1,3 +1,4 @@
+import 'estraverse-fb';
 import estraverse from 'estraverse';
 
 export default
