@@ -1,5 +1,5 @@
 import * as acorn from 'acorn-jsx';
-import escodegen from 'escodegen';
+import escodegen from 'escodegen-jsx';
 import fs from 'fs';
 import coffee from 'coffee-script';
 
