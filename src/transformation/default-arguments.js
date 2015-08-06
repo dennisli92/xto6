@@ -1,5 +1,4 @@
-import 'estraverse-fb';
-import estraverse from 'estraverse';
+import estraverse from 'estraverse-fb';
 
 // import AssignmentPattern from '../syntax/assignment-pattern';
 

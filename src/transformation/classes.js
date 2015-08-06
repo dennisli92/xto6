@@ -1,5 +1,4 @@
-import 'estraverse-fb';
-import estraverse from 'estraverse';
+import estraverse from 'estraverse-fb';
 import MethodDefinition from './../syntax/method-definition.js';
 import ClassDeclaration from './../syntax/class-declaration.js';
 import Identifier from './../syntax/identifier.js';

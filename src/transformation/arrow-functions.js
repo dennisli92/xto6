@@ -1,5 +1,4 @@
-import 'estraverse-fb';
-import estraverse from 'estraverse';
+import estraverse from 'estraverse-fb';
 import ArrowExpression from './../syntax/arrow-expression.js';
 import _ from 'lodash';
 

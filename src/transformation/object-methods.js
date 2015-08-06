@@ -1,5 +1,4 @@
-import 'estraverse-fb';
-import estraverse from 'estraverse';
+import estraverse from 'estraverse-fb';
 
 export default
   function (ast) {
