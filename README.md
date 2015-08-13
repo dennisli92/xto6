@@ -1,6 +1,6 @@
 [![Build Status](https://img.shields.io/travis/mohebifar/xto6.svg?style=flat-square)](http://travis-ci.org/mohebifar/xto6) [![License](http://img.shields.io/:license-mit-brightgreen.svg?style=flat-square)](http://mohebifar.mit-license.org) [![JS.ORG](https://img.shields.io/badge/js.org-xto6-ffb400.svg?style=flat-square)](http://js.org)
 
-# xto6
+# xto6 with support for JSX
 ![xto6](https://raw.githubusercontent.com/mohebifar/xto6-logo/master/logo.png)
 
 **xto6** transpiles your ES5 code to ES6. It does exactly the opposite of what other transpilers do (like babel and traceur)! If you want to understand what xto6 exactly does, [try the live demo](http://xto6.js.org/#try-live).
