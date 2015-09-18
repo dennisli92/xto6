@@ -157,7 +157,7 @@ Transformer.defaultOptions = {
   transformers: {
     classes: true,
     stringTemplates: true,
-    arrowFunctions: true,
+    arrowFunctions: false,
     let: true,
     defaultArguments: true,
     objectMethods: true
